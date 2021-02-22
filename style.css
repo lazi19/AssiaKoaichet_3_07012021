@@ -1,0 +1,301 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  body{
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* ************** header ************** */
+  .header__logo{
+    font-family: 'Shrikhand', cursive; 
+    font-size: 30px ;
+    font-weight: normal; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px ;
+    box-shadow: 0 0 .5rem rgba(0,0,0,.30);
+    position:relative;
+    z-index: 1000;
+   
+  }
+
+  /* ************** main ************** */
+ 
+ 
+  /* ************** section localisation du restaurant ************** */
+ .localisation{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 50px ;
+     background: #eaeaea ;
+     
+     
+ }
+ .localisation__text{
+     font-weight: bold; 
+ }
+  .fa-map-marker-alt{
+    margin-right: 15px;
+   
+  }
+    /* ************** section presentation du restaurant ************** */
+.presentation{
+    padding: 30px 0;
+    text-align: center; 
+    /* height: 400px; */
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items:center;
+    background-color: #f6f6f6;
+}
+.presentation__titre {
+    
+    margin-bottom:15px;
+}
+
+.presentation__text {
+    font-size: 18px;
+    margin-bottom:15px;
+}
+/* .presentation__btn{
+    text-decoration: non;
+    border: none;
+} */
+
+.prestation__a {
+    padding: 15px 18px;
+    border:2px  ;
+    border-radius: 50px;
+    background: linear-gradient(175deg, #FF79DA, #9356DC );
+    box-shadow: 2px 6px 10px -3px rgb(0 0 0 / 50%);
+    font-size: 16px;
+    color: white;
+    text-decoration:none;
+    margin: 20px;    
+ }
+ .prestation__a:active{
+    background-color:  #9356DC;
+    border: 2px #9356DC;  
+ }
+ .prestation__a:hover{
+    background: linear-gradient( #9356DC, #FF79DA ); 
+ }
+
+     /* ************** section fonctionnement ************** */
+    .fonction__titre{
+        margin: 40px 0 0 20px;
+    }
+     .fonction{
+        margin: 30px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        
+}
+
+    .fonction__link{
+        text-decoration: none;
+        color: black;
+}
+
+   .fonction__btn{
+    position: relative;
+    background-color: #f6f6f6;
+    border-radius: 20px;
+    text-align: center;
+    padding: 27px 0;
+    width: 330px;
+    margin: 10px auto 10px auto;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content:flex-start;
+    box-shadow: 2px 6px 10px -3px rgb(0 0 0 / 50%);
+} 
+   .fonction__btnLocResto i:first-child{
+    font-size: 20px;   
+}
+  
+   .fonction__btn i{
+       font-size: 17px;
+       color:gray;
+       margin: 0 30px;
+}
+   .fonction__btn:hover, .fonction__btn i:hover{
+    color:#9356DC;
+    font-size: 15px;
+}
+
+   .fonction__btn::before{
+       background:#9356DC ;
+       border-radius: 50px;
+       padding: 4px 8px;
+       color: white;
+       font-size: 14px;
+       font-weight: normal;
+       position: absolute;
+       left: -15px;   
+   }
+
+   .fonction__btnLocResto::before{
+       content: "1";
+      
+   }
+   .fonction__btnComposMenu::before{
+    content: "2";
+    
+}
+.fonction__btnChoixResto::before{
+    content: "3";
+   }
+   /* ************** section des cartes du restaurant ************** */
+   .restaurant{
+       background-color: #f6f6f6;
+       padding: 50px 0px;
+   }
+   .resto__titre{
+       margin-left: 20px;
+   }
+   .resto{
+       display: flex;
+       justify-content: space-evenly;
+       flex-wrap: wrap;
+       /* margin: 0px auto 0 20px ; */
+   }
+ 
+   .resto__carte{
+       width: 335px;
+       height: 300px;
+       background-color: white;
+       box-shadow: 2px 6px 10px -3px rgb(0 0 0 / 50%);
+       border-radius: 20px; 
+       margin: 20px 0 ;
+       cursor: pointer;   
+}
+   .carte__img{
+       width: 100%;
+       height: 70%;
+       background-size:cover;
+       position: relative;
+       border-radius:20px  20px 0 0;
+}
+
+.resto__carte1 .carte__img{
+    background-image: url("Maquettes Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg") ;
+}
+
+.resto__carte2 .carte__img{    
+    background-image: url("Maquettes Ohmyfood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg") ;
+}
+
+.resto__carte3 .carte__img{    
+    background-image: url("Maquettes Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg") ;
+}
+.resto__carte4 .carte__img{    
+    background-image: url("Maquettes Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg") ;
+}
+.btn{
+    position: absolute;
+    background-color: #99E2D0;
+    right: 10px ;
+    top:20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #008766;
+    padding: 8px 12px;
+}
+.carte__description{
+    margin:10px;
+    line-height:25px ;
+    position:relative
+}
+
+.carte__titre {
+   font-size: 16px; 
+   font-weight: bold;
+}
+.carte__texte {
+    font-size: 16px; 
+}
+
+.coeur-rempli {
+    position: absolute;
+    right: 24px;
+    top:13px;
+    font-size: 24px; 
+    cursor: pointer;
+    font-weight: bold;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-fill-color: whitesmoke;
+    transition-property: -webkit-text-fill-color, transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    }
+
+.coeur-rempli:hover{
+    -webkit-text-fill-color:#9356DC;
+    transform:scale(1.2);
+
+    /* color: linear-gradient( #9356DC, #FF79DA );  */
+     /* mix-blend-mode:color;     */
+}
+
+
+/* ************** footer ************** */
+.footer{
+    background-color: #353535 ;
+    color: white;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;    
+}
+
+.footer__logo{
+    font-family: 'Shrikhand', cursive;
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.footer__list{
+    display: flex;
+    flex-direction: column;
+}
+
+footer li{
+    list-style: none; 
+    margin-bottom: 10px;   
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+.footer__link{
+    margin-bottom: 10px;
+    
+    
+}
+
+.footer__link .fa-utensils{
+    margin-right: 10px;
+    font-size: 12px;  
+}
+
+.footer__link .fa-hands-helping{
+    margin-right: 4px; 
+    font-size: 11px; 
+}
+
+
+/* li i:first-child {
+margin-right: 9px;
+ } */
