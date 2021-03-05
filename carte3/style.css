@@ -34,10 +34,10 @@
 /* ************** photo principale du resto ************** */
   .heroImg{
     min-height: 275px;
-    max-height: 0px;
+    /* max-height: 0px; */
     width: 100%;
     object-fit: cover;
-    object-position:right;
+    object-position: top;
     
    
   }
@@ -91,7 +91,7 @@
     font-weight: lighter;
     text-transform: uppercase;
     font-size: 17px;
-    margin: 40px 0px 25px 0;
+    margin: 25px 0px 25px 0;
     position: relative;
 }
 .containerMenu__titreEntree::after{
@@ -132,10 +132,10 @@
 }
 
 .entree__titre{
-    font-size: 17px;
+    font-size: 18px;
 }
 .entree__text{
-    font-size: 15px;
+    font-size: 16px;
 }
 .entree__prix{
     font-size: 16px;
@@ -219,6 +219,11 @@
     background-image: linear-gradient(180deg, rgba(255,121,218,.9) , rgba(180,116,224,0.5));
 }
   
+.centrerBtn{
+    display: flex;
+    justify-content: center;
+    
+}
   
 /* ************** footer ************** */
 .footer{

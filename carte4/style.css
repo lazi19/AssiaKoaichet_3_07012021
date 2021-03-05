@@ -219,6 +219,11 @@
     background-image: linear-gradient(180deg, rgba(255,121,218,.9) , rgba(180,116,224,0.5));
 }
   
+.centrerBtn{
+    display: flex;
+    justify-content: center;
+    
+}
   
 /* ************** footer ************** */
 .footer{
