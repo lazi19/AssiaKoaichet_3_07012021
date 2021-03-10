@@ -47,7 +47,6 @@
 .presentation{
     padding: 30px 0;
     text-align: center; 
-    /* height: 400px; */
     display: flex;
     flex-direction: column;
     justify-content:space-evenly;
@@ -69,23 +68,47 @@
 } */
 
 .prestation__a {
+    position: relative;
     padding: 15px 18px;
     border:2px  ;
     border-radius: 50px;
-    background: linear-gradient(175deg, #FF79DA, #9356DC );
-    box-shadow: 2px 6px 10px -3px rgb(0 0 0 / 50%);
+    background-color: #542f81 ;
+    background: linear-gradient(175deg, rgba(255, 121, 218, 1), rgba(147, 86, 220, 1) );
+    box-shadow: 2px 6px 10px -3px rgba(0, 0, 0, .5);
     font-size: 16px;
     color: white;
     text-decoration:none;
-    margin: 20px;    
- }
- .prestation__a:active{
-    background-color:  #9356DC;
-    border: 2px #9356DC;  
- }
- .prestation__a:hover{
-    background: linear-gradient( #9356DC, #FF79DA ); 
- }
+    margin: 20px;  
+    opacity: 1;
+    transition: opacity .5s;  
+   
+ } 
+
+ /* .presentation__btn::after{
+     content: "";   
+    padding: 15px 18px;
+    height: 30px;
+    border:2px ;
+    border-radius: 50px;
+    background: linear-gradient(175deg, rgba(255, 121, 218, 1), rgb(30, 25, 36) ); 
+    font-size: 16px;  
+    text-decoration:none;
+    margin: 20px;  
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+
+ } */
+
+.prestation__a:hover {
+    opacity: 0.8;
+    box-shadow: 2px 6px 10px -3px rgba(0, 0, 0, .70);
+}
+
+
 
      /* ************** section fonctionnement ************** */
     .fonction__titre{
@@ -127,11 +150,9 @@
        color:gray;
        margin: 0 30px;
 }
-   .fonction__btn:hover, .fonction__btn i:hover{
+   .fonction__btn:hover  i  {
     color:#9356DC;
-    font-size: 15px;
 }
-
    .fonction__btn::before{
        background:#9356DC ;
        border-radius: 50px;
@@ -192,19 +213,19 @@
 }
 
 .resto__carte1 .carte__img{
-    background-image: url("Maquettes Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg") ;
+    background-image: url("Maquettes-Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg") ;
 }
 
 .resto__carte2 .carte__img{    
-    background-image: url("Maquettes Ohmyfood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg") ;
+    background-image: url("Maquettes-Ohmyfood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg") ;
     background-position: 0px -145px;
 }
 
 .resto__carte3 .carte__img{    
-    background-image: url("Maquettes Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg") ;
+    background-image: url("Maquettes-Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg") ;
 }
 .resto__carte4 .carte__img{    
-    background-image: url("Maquettes Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg") ;
+    background-image: url("Maquettes-Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg") ;
 }
 .btn{
     position: absolute;
@@ -217,20 +238,25 @@
     padding: 8px 12px;
 }
 .carte__description{
+    position:relative;
     margin:10px;
     line-height:25px ;
-    position:relative
+    color: black;
 }
 
 .carte__titre {
    font-size: 16px; 
    font-weight: bold;
+   
 }
+.carte__titre::first-letter{
+    text-transform: uppercase;
+} 
 .carte__texte {
     font-size: 16px; 
 }
 
-.coeur-rempli, .coeur-rempliDegrader {
+.coeur-rempli, .coeur-rempliDegrader{
     position: absolute;
     right: 24px;
     top:13px;
@@ -238,37 +264,30 @@
     cursor: pointer;
     font-weight: bold;
     -webkit-text-stroke-width: 1.5px;
-    -webkit-text-fill-color: white;
-    transition-property: -webkit-linear-gradient, -moz-linear-gradient, linear-gradient;
-    transition-duration: 5s;
-    transition-timing-function: ease-in-out;
+    -webkit-text-fill-color: white;    
+      
     }
-    /* .coeur-rempliDegrader{
-        -webkit-text-fill-color: rgba(22, 3, 34, 0.9);
-        visibility: hidden;
-    } */
-
-.coeur-rempli:hover{
-    /* -webkit-text-fill-color:#9356DC; */
-    /* transform:scale(1.2); */
-    /* background-image: linear-gradient(180deg, rgba(255,121,218,.9) , rgba(180,116,224,0.5)); */
-    /* color: linear-gradient(180deg, rgba(255,121,218,.9) , rgba(180,116,224,0.5));  */
-    /* -webkit-text-fill-color:rgba(255,121,218,.9) ; */
-    /* -webkit-text-fill-color:rgba(180,116,224,0.9) ; */
-     /* mix-blend-mode:color;     */
-     -webkit-text-fill-color:transparent;
-}
-
-.coeur-rempliDegrader:hover{    
-	background:-moz-linear-gradient(bottom,  #FF79DA 10%, #9356DC 100%);
-    background: -webkit-linear-gradient(bottom,  #FF79DA 10%, #9356DC 100%); 
+    
+    .coeur-rempliDegrader{
+    /* background:-moz-linear-gradient(bottom,  #FF79DA 10%, #9356DC 100%); */
+    /* background: -webkit-linear-gradient(bottom,  #FF79DA 10%, #9356DC 100%);  */
     background: linear-gradient(to top, #c078c1 0%, #9356DC 100%);
-    -webkit-background-clip: text;
-    /* -moz-#9356DC 100%, #FF79DA 0%background-clip: text; */
-    background-clip: text;
-   -webkit-text-fill-color:transparent;
-   -webkit-text-stroke-width: 0px;
-   
+
+   -webkit-background-clip: text;  /* rend la couleur du bacground a l'interieur du text    */
+    /* -webkit-text-stroke-width: 1px; */
+    /* -webkit-transform: scale(1); */
+    transition-property: -webkit-transform -webkit-text-stroke-width ;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    
+    } 
+    
+.coeur-rempliDegrader:hover{    
+	transform: scale(1.3);
+    -webkit-text-fill-color: transparent;
+    /* -webkit-text-fill-color:  #9356DC ; */
+    -webkit-text-stroke-width: 0px;
+    
 }
 
 
