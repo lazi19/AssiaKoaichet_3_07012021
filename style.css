@@ -80,7 +80,7 @@
     text-decoration:none;
     margin: 20px;  
     opacity: 1;
-    transition: opacity .5s;  
+    transition: opacity .08s;  
    
  } 
 
@@ -104,7 +104,7 @@
  } */
 
 .prestation__a:hover {
-    opacity: 0.8;
+    opacity: 0.9;
     box-shadow: 2px 6px 10px -3px rgba(0, 0, 0, .70);
 }
 
@@ -175,6 +175,7 @@
 .fonction__btnChoixResto::before{
     content: "3";
    }
+   
    /* ************** section des cartes du restaurant ************** */
    .restaurant{
        background-color: #f6f6f6;
@@ -256,7 +257,7 @@
     font-size: 16px; 
 }
 
-.coeur-rempli, .coeur-rempliDegrader{
+/* .coeur-rempli,*/ .coeur-rempliDegrader{ 
     position: absolute;
     right: 24px;
     top:13px;

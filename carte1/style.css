@@ -98,6 +98,16 @@
 }
 
 
+.entreePlatDessert{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+
+}
+
+
  /* ************** entrées ************** */
 .containerMenu__entree{
     height: 100%;
@@ -122,7 +132,7 @@
 }
 
 
-/* ************** entree1 ************** */
+/* ************** entree1 entree2 et entree3 ************** */
 
 .entree{
     width:98%;
@@ -141,8 +151,16 @@
 
 .entreeTitreText{
     line-height:24px; 
-   
+    /* width: 200px ;  */
+    /* white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;   
+    border: 1px solid #000000; */
 }
+/* 
+.entreeTitreText:hover {
+    overflow: visible;
+  } */
 
 .centrerPrix{
     width: 100%;
@@ -153,24 +171,32 @@
 
 .entree__titre{
     font-size: 17px;
+    width: 200px ; 
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
    
     
 }
 .entree__text{
-    font-size : 15px;
-    
-    white-space : nowrap; 
-    overflow : hidden;
-    text-overflow : ellipsis;
+    font-size : 15px;  
+    width: 200px ; 
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;   
+   
 }
 
 .entree__prix{
     font-size: 16px;
     font-weight: bold;
     align-self: flex-end;
-    margin-right: 20px;
     cursor: pointer;
-    
+    transition-property: transform;
+    transition-duration:  0.5s;
+    transition-delay:1ms;   
+    transition-timing-function: cubic-bezier(.5,0.5,.5,0.5);
+
 }
 
 
@@ -283,7 +309,7 @@
    /* animation: rotation;
 animation-duration: 3s;
 animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);*/
-animation-direction: alternate; 
+/* animation-direction: alternate;  */
 
 } 
 
@@ -293,6 +319,11 @@ animation-direction: alternate;
 
 .centrerPrix:hover ~ .checkBtn {
     transform: scaleX(1);
+    justify-content: center;
+    
+}
+.centrerPrix:hover  .entree__prix {
+    transform: translate(-10px);
     justify-content: center;
     
 }
@@ -317,15 +348,17 @@ animation-direction: alternate;
     transition: opacity  .2s;
 }
 
+.main__btnCommand:hover{
+    opacity: 0.9;
+    box-shadow: 2px 6px 10px -3px rgba(0, 0, 0, .70);
+}
+
 .centrerBtn{
     display: flex;
     justify-content: center;
     
 }
-.main__btnCommand:hover{
-    opacity: 0.9;
-    box-shadow: 2px 6px 10px -3px rgba(0, 0, 0, .70);
-}
+
   
 /* ************** footer ************** */
 .footer{
