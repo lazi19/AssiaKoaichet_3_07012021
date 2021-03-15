@@ -8,7 +8,7 @@
   body{
     font-family: 'Roboto', sans-serif;
   }
-  
+
   /* ************** header ************** */
   .header__logo{
     font-family: 'Shrikhand', cursive; 
@@ -56,9 +56,9 @@
 
   .titreEtCoeur{
       display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
+      /* justify-content: center; */
+      /* align-items: center; */
+      /* width: 100%; */
 
   }
 
@@ -71,37 +71,42 @@
 
    
 
-    .coeur-rempliDegrader{
-    /* right: 0px; */
-    /* top:0px; */
-    margin-right:40px;
+.coeur-rempli, .coeur-rempliDegrader{
+    top:40px;
+    position: absolute;
+    right:40px;
     font-size: 24px; 
     cursor: pointer;
-    -webkit-text-fill-color: white;    
-    background:-moz-linear-gradient(bottom,  #FF79DA 10%, #9356DC 100%);
-    background: -webkit-linear-gradient(bottom,  #FF79DA 10%, #9356DC 100%);     
+    -webkit-text-fill-color: white;  
+    -webkit-text-stroke-width: 1px;
+} 
+
+.coeur-rempliDegrader{
+    
+    /* background:-moz-linear-gradient(bottom,  #FF79DA 10%, #9356DC 100%);
+    background: -webkit-linear-gradient(bottom,  #FF79DA 10%, #9356DC 100%);   */
+    background: linear-gradient(to top  , #c078c1 10%, #9356DC 100%);   
+    -webkit-text-fill-color: transparent;
     background-clip: text ;
     -webkit-background-clip: text;
     /* color: transparent; */
-    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-width: 0px;    
     transition-property: transform  ;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
+    transform:  scale(0);
     
-    } 
+}
     
-.coeur-rempliDegrader:hover{    
-	transform: scale(1.2);
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-width: 0px;
-    
+.coeur:hover .coeur-rempliDegrader{    
+	transform: scale(1);    
 }
 
 
 .entreePlatDessert{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:flex-start;
     flex-wrap: wrap;
 
 
@@ -135,7 +140,7 @@
 /* ************** entree1 entree2 et entree3 ************** */
 
 .entree{
-    width:98%;
+    /* width:98%; */
     height: 70px;
     background-color: white ;
     border-radius: 15px;
@@ -146,21 +151,16 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    overflow: hidden;
         
 }
 
 .entreeTitreText{
     line-height:24px; 
-    /* width: 200px ;  */
-    /* white-space: nowrap; 
-    overflow: hidden;
-    text-overflow: ellipsis;   
-    border: 1px solid #000000; */
+    width: 250px ; 
+    
 }
-/* 
-.entreeTitreText:hover {
-    overflow: visible;
-  } */
+
 
 .centrerPrix{
     width: 100%;
@@ -204,7 +204,7 @@
 
 @keyframes glissement {
     0%{
-        transform: translateY(20px); 
+        transform: translateY(40px); 
     }
     100%{
         transform: translateY(0px);
@@ -248,7 +248,7 @@
 }
 .entree2, .plat2, .dessert2{
     
-    animation: opacite, visibilite;
+    animation: glissement, opacite, visibilite;
     animation-duration: 1.5s;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     animation-direction: alternate; 
@@ -259,7 +259,7 @@
 
 .entree3, .plat3, .dessert3{
     
-    animation: opacite, visibilite;
+    animation: glissement, opacite, visibilite;
     animation-duration: 1.5s;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     animation-direction: alternate; 
@@ -270,7 +270,7 @@
 
 .entree4, .plat4, .dessert4{
     
-    animation: opacite, visibilite;
+    animation: glissement, opacite, visibilite;
     animation-duration: 1.5s;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     animation-direction: alternate; 
@@ -288,16 +288,17 @@
    align-items: center;     
    background-color: #99e2d0;
    border-radius: 0 15px  15px 0; 
-   transform: scaleX(0);
+   transform: translateX(60px);
    transform-origin: 100%;
-   transition-property: transform;
+   transition-property: transform ;
    transition-duration:  0.5s;
-   transition-delay:1ms;   
+   transition-delay:1ms 3s;   
    transition-timing-function: cubic-bezier(.5,0.5,.5,0.5);
+  
 }
 
 
-/* .fa-check-circle*/.checkBtn i{ 
+.fa-check-circle{ 
     color: white;
     font-size: 22px;
     font-weight: bold;
@@ -318,9 +319,8 @@ animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);*/
 } 
 
 .centrerPrix:hover ~ .checkBtn {
-    transform: scaleX(1);
+    transform: translateX(0px);
     justify-content: center;
-    
 }
 .centrerPrix:hover  .entree__prix {
     transform: translate(-10px);
@@ -361,6 +361,7 @@ animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);*/
 
   
 /* ************** footer ************** */
+
 .footer{
     background-color: #353535 ;
     color: white;
@@ -407,4 +408,13 @@ footer a{
     font-size: 11px; 
 }
 
+
+@media screen and (max-width: 370px){
+   .containerMenu__entree, .containerMenu__plats, .containerMenu__dessert{
+       width: 100%;
+   } 
+   .coeur-rempli, .coeur-rempliDegrader{
+    right:20px;
+    } 
+}
 

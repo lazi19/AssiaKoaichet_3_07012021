@@ -7,7 +7,123 @@
 
   body{
     font-family: 'Roboto', sans-serif;
+    /* position: relative; */
+ 
   }
+
+   /* ************** loder spiner ************** */
+
+  .loader{
+    position: absolute;
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Shrikhand', cursive; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: chargement;
+    /* animation:  3s  ease-in-out chargement; */
+    animation-duration: 3s;
+    animation-iteration-count:inherit;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    /* animation-delay: 3s; */
+    /* overflow: visible; */
+   transform-origin: top ; 
+   z-index: 20;
+  }
+
+  @keyframes chargement {
+  0% { 
+      visibility: visible; 
+      /* transform: translateY(0);  */
+     
+  }
+  100%{   
+    /* transform: translateY(-538px); */
+      visibility: hidden;  
+  }
+}
+
+  .loadText {
+    width: 90vw;
+    height: 20vh;
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+
+.load__bar {
+    font-size: 50px;
+    background: -webkit-linear-gradient(bottom,  #FF79DA 10%, #9356DC 100%) ;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #9356DC;
+    height: 100%;
+    width: 10vh;
+    text-align: center;
+    animation: bars 2500ms backwards infinite;
+    animation-direction: alternate;
+}
+.load__bar--1 {
+  animation-delay: 200ms;
+}
+.load__bar--2 {
+ animation-delay: 400ms;
+}
+.load__bar--3 {
+  animation-delay: 600ms;
+}
+.load__bar--4 {
+  animation-delay: 800ms;
+}
+.load__bar--5 {
+    animation-delay: 1000ms;
+}
+
+.load__bar--6 {
+    animation-delay: 1200ms;
+}
+.load__bar--7 {
+    animation-delay: 1400ms;
+}
+
+.load__bar--8 {
+    animation-delay: 1600ms;
+} 
+
+@keyframes bars {
+   0% {
+       transform: scaleY(0.5);
+   }
+ 
+
+   100% {
+       transform: scaleY(1);
+    
+   }
+ 
+}
+/* loader cercle   */ 
+  
+.loadCircle {
+   border: 16px solid #f3f3f3;
+   border-radius: 50%;
+   border-top: 16px solid #FF79DA ;
+   border-bottom: 16px solid #9356DC;
+   width: 120px;
+   height: 120px; 
+   animation: spin 2s linear infinite;
+ }
+ 
+ @keyframes spin {
+   0% { transform: rotate(0deg); }
+   100% { transform: rotate(360deg); }
+ }
+
   
   /* ************** header ************** */
   .header__logo{
@@ -20,7 +136,7 @@
     height: 65px ;
     box-shadow: 0 0 .5rem rgba(0,0,0,.30);
     position:relative;
-    z-index: 1000;
+    /* z-index: 1000; */
    
   }
 
@@ -257,7 +373,7 @@
     font-size: 16px; 
 }
 
-/* .coeur-rempli,*/ .coeur-rempliDegrader{ 
+.coeur-rempli, .coeur-rempliDegrader{ 
     position: absolute;
     right: 24px;
     top:13px;
@@ -272,23 +388,20 @@
     .coeur-rempliDegrader{
     /* background:-moz-linear-gradient(bottom,  #FF79DA 10%, #9356DC 100%); */
     /* background: -webkit-linear-gradient(bottom,  #FF79DA 10%, #9356DC 100%);  */
-    background: linear-gradient(to top, #c078c1 0%, #9356DC 100%);
-
+    background: linear-gradient(to top  , #c078c1 10%, #9356DC 100%);
+    -webkit-text-fill-color: transparent;
    -webkit-background-clip: text;  /* rend la couleur du bacground a l'interieur du text    */
-    /* -webkit-text-stroke-width: 1px; */
-    /* -webkit-transform: scale(1); */
-    transition-property: -webkit-transform -webkit-text-stroke-width ;
+   background-clip: text;
+    -webkit-text-stroke-width: 0px;
+     transform: scale(0); 
+    transition-property: transform -webkit-transform -webkit-text-stroke-width ;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
     
     } 
     
-.coeur-rempliDegrader:hover{    
-	transform: scale(1.3);
-    -webkit-text-fill-color: transparent;
-    /* -webkit-text-fill-color:  #9356DC ; */
-    -webkit-text-stroke-width: 0px;
-    
+    .coeur:hover  .coeur-rempliDegrader{    
+	transform: scale(1);
 }
 
 
@@ -343,3 +456,13 @@ footer a{
 /* li i:first-child {
 margin-right: 9px;
  } */
+
+ /* Media queries */
+/* @media (max-width: 374px) {
+    .fonction__btn  {
+        width: 310px;
+    }
+    .resto__carte{
+        width: 310px;
+    }
+  } */
