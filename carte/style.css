@@ -20,7 +20,6 @@
     height: 65px ;
     box-shadow: 0 0 .5rem rgba(0,0,0,.30);
     position: relative;
-    /* z-index: 1000;    */
   }
 
   .header__fleche{
@@ -38,9 +37,8 @@
     width: 100%;
     object-fit: cover;
     object-position:right;
-    
-   
   }
+
   /* ************** main ************** */
   .containerMenu{
       width: 100%;
@@ -56,10 +54,6 @@
 
   .titreEtCoeur{
       display: flex;
-      /* justify-content: center; */
-      /* align-items: center; */
-      /* width: 100%; */
-
   }
 
   .containerMenu__titre {
@@ -68,8 +62,6 @@
     font-weight: normal; 
     margin-right: auto;
 }
-
-   
 
 .coeur-rempli, .coeur-rempliDegrader{
     top:40px;
@@ -83,40 +75,33 @@
 
 .coeur-rempliDegrader{
     
-    /* background:-moz-linear-gradient(bottom,  #FF79DA 10%, #9356DC 100%);
-    background: -webkit-linear-gradient(bottom,  #FF79DA 10%, #9356DC 100%);   */
+    background:-moz-linear-gradient(bottom,  #FF79DA 10%, #9356DC 100%);
+    background: -webkit-linear-gradient(bottom,  #FF79DA 10%, #9356DC 100%);  
     background: linear-gradient(to top  , #c078c1 10%, #9356DC 100%);   
     -webkit-text-fill-color: transparent;
     background-clip: text ;
     -webkit-background-clip: text;
-    /* color: transparent; */
     -webkit-text-stroke-width: 0px;    
     transition-property: transform  ;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
     transform:  scale(0);
-    
 }
     
 .coeur:hover .coeur-rempliDegrader{    
 	transform: scale(1);    
 }
 
-
 .entreePlatDessert{
     display: flex;
     justify-content: center;
     align-items:flex-start;
     flex-wrap: wrap;
-
-
 }
-
-
  /* ************** entrées ************** */
+
 .containerMenu__entree{
     height: 100%;
-    /* transition: all 2s; */
 }
 
 .containerMenu__titreEntree{
@@ -140,7 +125,6 @@
 /* ************** entree1 entree2 et entree3 ************** */
 
 .entree{
-    /* width:98%; */
     height: 70px;
     background-color: white ;
     border-radius: 15px;
@@ -152,19 +136,15 @@
     align-items: center;
     cursor: pointer;
     overflow: hidden;
-        
 }
 
 .entreeTitreText{
     line-height:24px; 
-    width: 250px ; 
-    
+    width: 250px ;   
 }
-
 
 .centrerPrix{
     width: 100%;
-    /* height: 100%; */
     display: flex;
     justify-content:space-between;
 }
@@ -175,16 +155,14 @@
     white-space: nowrap; 
     overflow: hidden;
     text-overflow: ellipsis; 
-   
-    
 }
+
 .entree__text{
     font-size : 15px;  
     width: 200px ; 
     white-space: nowrap; 
     overflow: hidden;
-    text-overflow: ellipsis;   
-   
+    text-overflow: ellipsis;  
 }
 
 .entree__prix{
@@ -200,7 +178,7 @@
 }
 
 
-/* animation des le chargement de la page*/
+/* ************** animation des le chargement de la page ***************/
 
 @keyframes glissement {
     0%{
@@ -230,24 +208,17 @@
     }  
 }
 
-
-
  .entree1, .plat1, .dessert1{
     
     animation: glissement, opacite, visibilite ;
     animation-duration: 1s;
-    animation-fill-mode: forwards ; /*elle garde l'état final */
-    /* animation-delay: 2s; */
-    /* animation-iteration-count: unset; */
-    /* animation-play-state: paused; */
+    animation-fill-mode: forwards ;     /*elle garde l'état final */
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-    animation-direction: alternate; /* pour un retour en douceur */
-    /* animation: couleur 3s alternate infinite; elle remplace le tt */
-    
-
+    animation-direction: alternate;     /* pour un retour en douceur */
 }
+
 .entree2, .plat2, .dessert2{
-    
+
     animation: glissement, opacite, visibilite;
     animation-duration: 1.5s;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -304,14 +275,8 @@
     font-weight: bold;
     text-align:center;
     transform: rotate(0deg);
-    /* transition-delay:0.5ms; */
     transition-duration: .7s ;
     transition-timing-function: cubic-bezier( 0.73, 0.32, 0.38, 0.84 );
-   /* animation: rotation;
-animation-duration: 3s;
-animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);*/
-/* animation-direction: alternate;  */
-
 } 
 
  .centrerPrix:hover ~ .checkBtn i{    
@@ -325,10 +290,9 @@ animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);*/
 .centrerPrix:hover  .entree__prix {
     transform: translate(-10px);
     justify-content: center;
-    
 }
 
-/* bouton de commande */
+/* ************** bouton de commande ************** */
 
 .main__btnCommand{
     width:190px;
@@ -344,8 +308,9 @@ animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);*/
     margin: 40px 0;
     cursor: pointer;
     opacity: 1;
-    /* transition: opacity box-shadow 1s;  */
-    transition: opacity  .2s;
+    transition-property: opacity, box-shadow ;
+    transition-duration: .3s ;
+   
 }
 
 .main__btnCommand:hover{
@@ -356,7 +321,6 @@ animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);*/
 .centrerBtn{
     display: flex;
     justify-content: center;
-    
 }
 
   
@@ -394,8 +358,6 @@ footer a{
 }
 .footer__link{
     margin-bottom: 10px;
-    
-    
 }
 
 .footer__link .fa-utensils{
@@ -408,6 +370,7 @@ footer a{
     font-size: 11px; 
 }
 
+/* ************** media query ************** */
 
 @media screen and (max-width: 370px){
    .containerMenu__entree, .containerMenu__plats, .containerMenu__dessert{
