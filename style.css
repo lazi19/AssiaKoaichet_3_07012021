@@ -28,6 +28,7 @@
     animation-fill-mode: forwards;
     transform-origin: top ; 
     z-index: 20;
+    position :fixed;
   }
 
   @keyframes chargement {
@@ -424,4 +425,19 @@ footer a{
 .footer__link .fa-hands-helping{
     margin-right: 4px; 
     font-size: 11px; 
+}
+
+
+/* ************** media query ************** */
+
+@media screen and (max-width: 370px){
+    .resto {
+        width: 100%;
+    }
+    .resto__carte {
+        width: 300px;
+    }
+    .fonction__btn {
+        width: 290px;
+    }
 }

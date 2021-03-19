@@ -372,12 +372,17 @@ footer a{
 
 /* ************** media query ************** */
 
-@media screen and (max-width: 370px){
+@media screen and (max-width: 320px){
+    .centrerPrix:hover ~ .checkBtn {
+        transform: translateX(-10px);
+        justify-content: center;
+    }
    .containerMenu__entree, .containerMenu__plats, .containerMenu__dessert{
-       width: 100%;
+       width: 98%;
+       
    } 
    .coeur-rempli, .coeur-rempliDegrader{
-    right:20px;
+    right:7px;
     } 
 }
 
