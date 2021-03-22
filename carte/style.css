@@ -77,9 +77,9 @@
     
     background:-moz-linear-gradient(bottom,  #FF79DA 10%, #9356DC 100%);
     background: -webkit-linear-gradient(bottom,  #FF79DA 10%, #9356DC 100%);  
-    background: linear-gradient(to top  , #c078c1 10%, #9356DC 100%);   
+    background: linear-gradient(to top  , #FF79DA 10%, #9356DC 100%);   
     -webkit-text-fill-color: transparent;
-    background-clip: text ;
+    /* background-clip: text ; */
     -webkit-background-clip: text;
     -webkit-text-stroke-width: 0px;    
     transition-property: transform  ;
@@ -174,11 +174,48 @@
     transition-duration:  0.5s;
     transition-delay:1ms;   
     transition-timing-function: cubic-bezier(.5,0.5,.5,0.5);
-
 }
 
+.checkBtn{
+    width: 60px;
+    height: 70px;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;     
+    background-color: #99e2d0;
+    border-radius: 0 15px  15px 0; 
+    transform: translateX(60px);
+    transform-origin: 100%;
+    transition-property: transform ;
+    transition-duration:  0.5s;
+    transition-timing-function: cubic-bezier(.5,0.5,.5,0.5);
+ }
+ 
+ .fa-check-circle{ 
+     color: white;
+     font-size: 22px;
+     font-weight: bold;
+     text-align:center;
+     transform: rotate(0deg);
+     transition-duration: .7s ;
+     transition-timing-function: cubic-bezier( 0.73, 0.32, 0.38, 0.84 );
+ } 
+ 
+  .centrerPrix:hover ~ .checkBtn i{    
+     transform: rotate(-360deg);
+ } 
+ 
+ .centrerPrix:hover ~ .checkBtn {
+     transform: translateX(0px);
+     justify-content: center;
+ }
+ .centrerPrix:hover  .entree__prix {
+     transform: translate(-10px);
+     justify-content: center;
+ }
+ 
 
-/* ************** animation des le chargement de la page ***************/
+/* ************** animation des le chargement de la page pour les entree, les plats et les desserts ***************/
 
 @keyframes glissement {
     0%{
@@ -209,7 +246,6 @@
 }
 
  .entree1, .plat1, .dessert1{
-    
     animation: glissement, opacite, visibilite ;
     animation-duration: 1s;
     animation-fill-mode: forwards ;     /*elle garde l'état final */
@@ -218,7 +254,6 @@
 }
 
 .entree2, .plat2, .dessert2{
-
     animation: glissement, opacite, visibilite;
     animation-duration: 1.5s;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -229,7 +264,6 @@
 }
 
 .entree3, .plat3, .dessert3{
-    
     animation: glissement, opacite, visibilite;
     animation-duration: 1.5s;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -240,7 +274,6 @@
 }
 
 .entree4, .plat4, .dessert4{
-    
     animation: glissement, opacite, visibilite;
     animation-duration: 1.5s;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -250,47 +283,6 @@
     animation-fill-mode: forwards ;
 }
  
-
-.checkBtn{
-   width: 60px;
-   height: 70px;
-   display:flex;
-   justify-content: flex-end;
-   align-items: center;     
-   background-color: #99e2d0;
-   border-radius: 0 15px  15px 0; 
-   transform: translateX(60px);
-   transform-origin: 100%;
-   transition-property: transform ;
-   transition-duration:  0.5s;
-   transition-delay:1ms 3s;   
-   transition-timing-function: cubic-bezier(.5,0.5,.5,0.5);
-  
-}
-
-
-.fa-check-circle{ 
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-    text-align:center;
-    transform: rotate(0deg);
-    transition-duration: .7s ;
-    transition-timing-function: cubic-bezier( 0.73, 0.32, 0.38, 0.84 );
-} 
-
- .centrerPrix:hover ~ .checkBtn i{    
-    transform: rotate(-360deg);
-} 
-
-.centrerPrix:hover ~ .checkBtn {
-    transform: translateX(0px);
-    justify-content: center;
-}
-.centrerPrix:hover  .entree__prix {
-    transform: translate(-10px);
-    justify-content: center;
-}
 
 /* ************** bouton de commande ************** */
 
@@ -372,11 +364,8 @@ footer a{
 
 /* ************** media query ************** */
 
-@media screen and (max-width: 320px){
-    .centrerPrix:hover ~ .checkBtn {
-        transform: translateX(-10px);
-        justify-content: center;
-    }
+@media screen and (max-width: 375px){
+   
    .containerMenu__entree, .containerMenu__plats, .containerMenu__dessert{
        width: 98%;
        
