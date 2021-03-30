@@ -126,7 +126,7 @@
 
 .entree{
     height: 70px;
-    width: 340px;
+    width: 360px;
     background-color: white ;
     border-radius: 15px;
     margin-right: 10px;
@@ -140,16 +140,15 @@
 }
 
 .entreeTitreText{
+    /* width: 90%; */
     line-height:24px; 
-    white-space: nowrap; 
+   white-space: nowrap; 
     overflow: hidden;     
-    text-overflow: ellipsis;  
-     
-    
+     text-overflow: ellipsis;  
 }
 
 .centrerPrix{
-    width: 90%;
+    width: 95%;
     display: flex;
     justify-content:space-between;
     white-space: nowrap; 
@@ -157,79 +156,41 @@
     text-overflow: ellipsis;  
 }
 
+/* ************** animation ellipsis déclencher par le hover   ***************/
 
-
-
-
-
-
-
-
-
-
-
+@keyframes ellipsis {
+    from {
+        padding-right: 0 ;
+     }
+ 
+     to {
+         padding-right: 50px;
+     }
+   }
+ 
 .entree__titre{
     font-size: 17px;
-    /* width: 85% ;  */
     white-space: nowrap; 
-    /* overflow: hidden;     
-    text-overflow: ellipsis;  */
-   
-    /* white-space: normal; 
-    overflow: auto;
-    text-overflow: clip;  
-    transition-property: text-overflow, overflow, white-space;
-    transition-duration:  1s;
-    transition-timing-function: cubic-bezier(.5,0.5,.5,0.5); */
+    overflow: hidden;     
+    text-overflow: ellipsis;  
 }
 
  
  .centrerPrix:hover  .entree__titre{ 
-    /* width:85%; */
-   white-space: nowrap; 
-     overflow: hidden;     
-     text-overflow: ellipsis;  
      animation: ellipsis 0.6s ease-in-out   forwards;
-    
 } 
-
-@keyframes ellipsis {
-   from {
-  
-       padding-right: 0 ;
-    }
-
-    to {
-       
-        padding-right: 10px;
-    }
-  }
 
 .entree__text{
     font-size : 15px;  
-    /* width: 85% ;  */
     white-space: nowrap; 
     overflow: hidden;
-    text-overflow: ellipsis;  
-/*     
-    transition-property: text-overflow;
-    transition-duration:  1s;
-    transition-timing-function: ease-in-out; */
+    text-overflow: ellipsis;
 }
 
 .centrerPrix:hover  .entree__text{
     animation: ellipsis 0.6s ease-in-out   forwards;   
  
 }
-
-
-
-
-
-
-
-
-
 
 .entree__prix{
     font-size: 16px;
@@ -267,10 +228,6 @@
      transition-duration: .7s ;
      transition-timing-function: cubic-bezier( 0.73, 0.32, 0.38, 0.84 );
  } 
-
-
-
-
   .centrerPrix:hover ~.checkBtn i{    
      transform: rotate(-360deg);
  } 
@@ -434,12 +391,16 @@ footer a{
 
 /* ************** media query ************** */
 
-@media screen and (max-width: 375px){
+@media screen and (max-width: 425px){
    
    .containerMenu__entree, .containerMenu__plats, .containerMenu__dessert{
-       width: 98%;
-       
+       width: 90%;
    } 
+   
+   .entree{   
+    width: 100%;
+    }
+
    .coeur-rempli, .coeur-rempliDegrader{
     right:7px;
     } 
