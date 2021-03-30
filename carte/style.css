@@ -126,6 +126,7 @@
 
 .entree{
     height: 70px;
+    width: 340px;
     background-color: white ;
     border-radius: 15px;
     margin-right: 10px;
@@ -140,30 +141,95 @@
 
 .entreeTitreText{
     line-height:24px; 
-    width: 250px ;   
+    white-space: nowrap; 
+    overflow: hidden;     
+    text-overflow: ellipsis;  
+     
+    
 }
 
 .centrerPrix{
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content:space-between;
+    white-space: nowrap; 
+    overflow: hidden;     
+    text-overflow: ellipsis;  
 }
+
+
+
+
+
+
+
+
+
+
+
 
 .entree__titre{
     font-size: 17px;
-    width: 200px ; 
+    /* width: 85% ;  */
     white-space: nowrap; 
-    overflow: hidden;
-    text-overflow: ellipsis; 
+    /* overflow: hidden;     
+    text-overflow: ellipsis;  */
+   
+    /* white-space: normal; 
+    overflow: auto;
+    text-overflow: clip;  
+    transition-property: text-overflow, overflow, white-space;
+    transition-duration:  1s;
+    transition-timing-function: cubic-bezier(.5,0.5,.5,0.5); */
 }
+
+ 
+ .centrerPrix:hover  .entree__titre{ 
+    /* width:85%; */
+   white-space: nowrap; 
+     overflow: hidden;     
+     text-overflow: ellipsis;  
+     animation: ellipsis 0.6s ease-in-out   forwards;
+    
+} 
+
+@keyframes ellipsis {
+   from {
+  
+       padding-right: 0 ;
+    }
+
+    to {
+       
+        padding-right: 10px;
+    }
+  }
 
 .entree__text{
     font-size : 15px;  
-    width: 200px ; 
+    /* width: 85% ;  */
     white-space: nowrap; 
     overflow: hidden;
     text-overflow: ellipsis;  
+/*     
+    transition-property: text-overflow;
+    transition-duration:  1s;
+    transition-timing-function: ease-in-out; */
 }
+
+.centrerPrix:hover  .entree__text{
+    animation: ellipsis 0.6s ease-in-out   forwards;   
+ 
+}
+
+
+
+
+
+
+
+
+
 
 .entree__prix{
     font-size: 16px;
@@ -173,7 +239,7 @@
     transition-property: transform;
     transition-duration:  0.5s;
     transition-delay:1ms;   
-    transition-timing-function: cubic-bezier(.5,0.5,.5,0.5);
+    transition-timing-function: ease-in-out;
 }
 
 .checkBtn{
@@ -189,6 +255,7 @@
     transition-property: transform ;
     transition-duration:  0.5s;
     transition-timing-function: cubic-bezier(.5,0.5,.5,0.5);
+   
  }
  
  .fa-check-circle{ 
@@ -200,8 +267,11 @@
      transition-duration: .7s ;
      transition-timing-function: cubic-bezier( 0.73, 0.32, 0.38, 0.84 );
  } 
- 
-  .centrerPrix:hover ~ .checkBtn i{    
+
+
+
+
+  .centrerPrix:hover ~.checkBtn i{    
      transform: rotate(-360deg);
  } 
  
